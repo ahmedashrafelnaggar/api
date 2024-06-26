@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_employment_statusform" model="ir.ui.view">
+            <field name="name">employment.status.form</field>
+            <field name="model">employment.status</field>
+            <field name="arch" type="xml">
+                <form string="Employment status">
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                        <group name="status_details" col="4">
+                            <field name="code"/>
+                            <field name="ex_id"/>
+                        </group>
+                        <field name="description"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_employment_statustree" model="ir.ui.view">
+            <field name="name">employment.status.tree</field>
+            <field name="model">employment.status</field>
+            <field name="arch" type="xml">
+                <tree string="Employment status">
+                    <field name="name" placeholder="Name"/>
+                    <field name="code"/>
+                    <field name="ex_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_employment_status_search" model="ir.ui.view">
+            <field name="name">employment.status.ssarch</field>
+            <field name="model">employment.status</field>
+            <field name="arch" type="xml">
+                <search string="Employment status">
+                    <field name="name" placeholder="Name"/>
+                    <field name="code"/>
+                    <field name="ex_id"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_view_employment_status" model="ir.actions.act_window">
+            <field name="name">Employee Status</field>
+            <field name="res_model">employment.status</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_employment_status_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a Employment status
+                </p>
+                <p>
+                    Employment statuss are the financial institutions at which you and your contacts have their
+                    accounts.
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_view_employment_status" id="menu_action_view_employment_status" parent="hr_recruitment.menu_hr_recruitment_configuration"/>
+    </data>
+</odoo>

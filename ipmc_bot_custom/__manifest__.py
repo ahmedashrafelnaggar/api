@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+{
+    'name': " IPMC Recruitment ",
+    'summary': """ IPMC Recruitment Customizations """,
+    'description': """ IPMC Recruitment Customizations """,
+    'author': " BOT Team ",
+    'website': " https://github.com/mohamed-a-ibrahim/ipmc ",
+    'category': 'Human Resources',
+    'sequence':-100,
+    'version': '1.0.0.0',
+    'license':'LGPL-3',
+    'depends': ['hr_recruitment'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/ipmc_bank_view.xml',
+        'views/ipmc_cities_view.xml',
+        'views/ipmc_employment_status_view.xml',
+        'views/ipmc_job_view.xml',
+        'views/ipmc_job_sectors_views.xml',
+        'views/ipmc_nationalities_view.xml',
+        'views/ipmc_qualifications_views.xml',
+        'views/ipmc_application_announcement.xml',
+        'views/ipmc_applicants_view.xml',
+    ],
+    'demo': [],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+
+}

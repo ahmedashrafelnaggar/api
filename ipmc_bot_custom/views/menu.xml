@@ -1,0 +1,18 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+
+<!--    <record id="action_ipmc_applicants">-->
+
+<!--    </record>-->
+<!--    &lt;!&ndash; Top menu item &ndash;&gt;-->
+<!--    <menuitem name="IPMC Recruitments"-->
+<!--              id="menu_recruitment_root"-->
+<!--              sequence="0"/>-->
+
+<!--    <menuitem name="Applicants"-->
+<!--              id="menu_applicants"-->
+<!--              parent="menu_recruitment_root"-->
+<!--              sequence="0"/>-->
+
+
+<!--</odoo>-->

@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">view.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <page name="access_rights" position="inside">
+                <group>
+                    <group name="api_access" string="Api Secret Key">
+                        <field name="secret_key" password="True"/>
+                        <field name="otp"/>
+                        <field name="otp_valid_date"/>
+                    </group>
+                    <group></group>
+                </group>
+
+            </page>
+        </field>
+    </record>
+</odoo>

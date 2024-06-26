@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_ipmc_application_announcementform" model="ir.ui.view">
+            <field name="name">ipmc.application.announcement.form</field>
+            <field name="model">ipmc.application.announcement</field>
+            <field name="arch" type="xml">
+                <form string="Application announcement">
+                    <sheet>
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                        <group name="status_details" col="4">
+                            <field name="code"/>
+                            <field name="ex_id"/>
+                            <label for="start_at" string="Validity"/>
+                                <div class="o_row">
+                                    <field name="start_at" widget="daterange" options='{"related_end_date": "closed_at"}'/>
+                                    <i class="fa fa-long-arrow-right mx-2 oe_edit_only" aria-label="Arrow icon" title="Arrow"/>
+                                    <field name="closed_at" widget="daterange" options='{"related_start_date": "start_at"}'/>
+                                </div>
+
+                            <field name="terms"/>
+                            <field name="notes"/>
+                            <field name="descriptions"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_ipmc_application_announcementtree" model="ir.ui.view">
+            <field name="name">ipmc.application.announcement.tree</field>
+            <field name="model">ipmc.application.announcement</field>
+            <field name="arch" type="xml">
+                <tree string="Application announcement">
+                    <field name="name" placeholder="Name"/>
+                    <field name="code"/>
+                    <field name="start_at"/>
+                    <field name="closed_at"/>
+                    <field name="start_at"/>
+                </tree>
+            </field>
+        </record>
+        <record id="view_ipmc_application_announcement_search" model="ir.ui.view">
+            <field name="name">ipmc.application.announcement.ssarch</field>
+            <field name="model">ipmc.application.announcement</field>
+            <field name="arch" type="xml">
+                <search string="Application announcement">
+                    <field name="name" placeholder="Name"/>
+                    <field name="code"/>
+                    <field name="start_at"/>
+                    <field name="closed_at"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_view_ipmc_application_announcement" model="ir.actions.act_window">
+            <field name="name">Application announcement</field>
+            <field name="res_model">ipmc.application.announcement</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_ipmc_application_announcement_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a Application announcement
+                </p>
+                <p>
+                    Application announcements are the financial institutions at which you and your contacts have their
+                    accounts.
+                </p>
+            </field>
+        </record>
+        <menuitem action="action_view_ipmc_application_announcement" id="menu_action_view_ipmc_application_announcement" parent="hr_recruitment.menu_hr_recruitment_configuration"/>
+    </data>
+</odoo>
